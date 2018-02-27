@@ -61,7 +61,7 @@ def getRecommendations(prefs,person,similarity=sim_pearson):
     for other in prefs:
         if other==person: continue
         sim=similarity(prefs,person,other)
-        if sim<=0: continue
+       # if sim<=0: continue
         for item in prefs[other]:
             if item not in prefs[person] or prefs[person][item]==0:
                 totals.setdefault(item,0)

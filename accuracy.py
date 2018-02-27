@@ -4,12 +4,19 @@ Created on Wed Feb 28 05:19:22 2018
 
 @author: killada
 """
-def subtract_lists(a,b):
-    for i, val in enumerate(a):
-        val = val-b[i]
-    return a
+import numpy as np
+
+def subtract_elements(a,b):
+    diff = []    
+    diff = np.subtract(a,b)
+    sumx = np.sum(diff)
+    print sumx
+    accuracyx = sumx/len(diff)    
+    return accuracyx
     
 rows=[]
+from sklearn.metrics import accuracy_score
+
 def loading():
    
         #creader =  open('act_pred.csv','r')
@@ -33,30 +40,34 @@ def loading():
        # return prefs
     import csv
     data=csv.reader(open('act_pred.csv','rb'))
-    user,act,pred =[],[],[]
-    accuracy = []
+    user,y_true,y_pred =[],[],[]
+    #accuracy = []
     data.next()
-    user_now = 'L1'
+    #user_now = 'L1'
     #print user_now
     for row in data:        
         user.append(row[0])       
         #print user        
-        l = len(user)
+        #l = len(user)
+        #print l        
         #print user[l-1]
-        print user_now
-        if user[l-1] == user_now:
-            act.append(float(row[3]))
-            pred.append(float(row[2]))
-        else:
+        #print user_now
+        #if user[l-1] == user_now:
+        y_true.append(float(row[3]))
+        y_pred.append(float(row[2]))
+        #else:
+        print accuracy_score(y_true,(y_pred>0).astype(int))
             #print list(map(operator.sub, act,pred))
             #acc = act - pred
             #print act
-            acc = subtract_lists(act,pred)
-            accuracy.append(acc)
-            l = len(user)
-            user_now = user[l-1]
+                
+            #acc = subtract_elements(act,pred)
+            #print acc            
+            #accuracy.append(acc)
+            #l = len(user)
+            #user_now = user[l-1]
         #accuracy = act - pred
-        print accuracy
+    #print accuracy
     #print user
     #print act
     #print pred

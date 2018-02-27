@@ -4,7 +4,6 @@ Spyder Editor
 
 This is a temporary script file.
 """
-
 rows=[]
 def loading():
    
@@ -61,7 +60,7 @@ def getRecommendations(prefs,person,similarity=sim_pearson):
     for other in prefs:
         if other==person: continue
         sim=similarity(prefs,person,other)
-       # if sim<=0: continue
+        if sim<=0: continue
         for item in prefs[other]:
             if item not in prefs[person] or prefs[person][item]==0:
                 totals.setdefault(item,0)
@@ -71,7 +70,10 @@ def getRecommendations(prefs,person,similarity=sim_pearson):
                 simSums[item]+=sim
     # Create the normalized list
     rankings=[(total/simSums[item],item) for item,total in totals.items( )]
+    rankings_new=[(total/simSums[item]) for item,total in totals.items( )]    
     # Return the sorted list
     rankings.sort( )
     rankings.reverse( )
     return rankings
+   
+

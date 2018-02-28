@@ -21,6 +21,38 @@ def loading():
             prefs[user][resource]=float(rating)
             
         return prefs
+def loading100():
+   
+        creader =  open('SAMPLE_RATINGS_100.csv','r')
+    
+        creader.next()
+        for row in creader:
+           rows.append(row)
+            
+       
+        prefs={}
+        for line in rows[:]:
+            (user,resource,rating)=line.split(",")
+            prefs.setdefault(user,{})
+            prefs[user][resource]=float(rating)
+            
+        return prefs
+def loading250():
+   
+        creader =  open('SAMPLE_RATINGS_250.csv','r')
+    
+        creader.next()
+        for row in creader:
+           rows.append(row)
+            
+       
+        prefs={}
+        for line in rows[:]:
+            (user,resource,rating)=line.split(",")
+            prefs.setdefault(user,{})
+            prefs[user][resource]=float(rating)
+            
+        return prefs
 from math import sqrt
 
 def sim_pearson(prefs,p1,p2):
@@ -70,7 +102,7 @@ def getRecommendations(prefs,person,similarity=sim_pearson):
                 simSums[item]+=sim
     # Create the normalized list
     rankings=[(total/simSums[item],item) for item,total in totals.items( )]
-    rankings_new=[(total/simSums[item]) for item,total in totals.items( )]    
+    #rankings_new=[(total/simSums[item]) for item,total in totals.items( )]    
     # Return the sorted list
     rankings.sort( )
     rankings.reverse( )

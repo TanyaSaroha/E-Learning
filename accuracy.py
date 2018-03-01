@@ -87,8 +87,8 @@ def loading():
     print "MAE for 250 ratings"
     print error2 
     arr=[1,2,3,4,5,6,7,8,9,10]
-    plt.xlabel('X-axis depicts the number of learners')
-    plt.ylabel('Y-axis depicts the Mean absolute error')
+    plt.xlabel('Learner')
+    plt.ylabel('Mean absolute error')
     plt.title('This graph depicts the MAE for different number of ratings')
     plt.plot(arr,error1,label='150 ratings')
     plt.plot(arr,error,label='200 ratings')

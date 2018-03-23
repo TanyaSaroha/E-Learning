@@ -97,3 +97,4 @@ def loading():
     plt.show()
     
    
+loading()

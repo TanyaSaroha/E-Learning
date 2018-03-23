@@ -87,7 +87,7 @@ def topMatches(prefs,person,n=5,similarity=sim_pearson):
     scores.reverse()
     return scores[0:n]
 
-def getRecommendations(prefs1,prefs2,person,similarity=sim_pearson):
+def getRecommendations(prefs1,person,similarity=sim_pearson):
     totals={}
     simSums={}
     for other in prefs1:
@@ -108,6 +108,8 @@ def getRecommendations(prefs1,prefs2,person,similarity=sim_pearson):
    
 
 prefs = loading250()
+user = input('Enter User')
 #print sim_pearson(prefs,'L1','L2')
 #print topMatches(prefs,'L1')
-print getRecommendations(prefs, 'L1')
+print getRecommendations(prefs, user)
+print prefs[user]

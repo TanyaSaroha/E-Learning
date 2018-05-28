@@ -4,40 +4,11 @@ Spyder Editor
 
 This is a temporary script file.
 """
+
+from math import sqrt
+
 rows=[]
-def loading200():
-   
-        creader =  open('SAMPLE_RATINGS.csv','r')
-    
-        creader.next()
-        for row in creader:
-           rows.append(row)
-            
-       
-        prefs={}
-        for line in rows[:]:
-            (user,resource,rating)=line.split(",")
-            prefs.setdefault(user,{})
-            prefs[user][resource]=float(rating)
-            
-        return prefs
-def loading150():
-   
-        creader =  open('SAMPLE_RATINGS_100.csv','r')
-    
-        creader.next()
-        for row in creader:
-           rows.append(row)
-            
-       
-        prefs={}
-        for line in rows[:]:
-            (user,resource,rating)=line.split(",")
-            prefs.setdefault(user,{})
-            prefs[user][resource]=float(rating)
-            
-        return prefs
-def loading250():
+def loading():
    
         creader =  open('SAMPLE_RATINGS_250.csv','r')
     
@@ -53,8 +24,7 @@ def loading250():
             prefs[user][resource]=float(rating)
             
         return prefs
-from math import sqrt
-
+        
 def sim_pearson(prefs,p1,p2):
     si={}
     for item in prefs[p1]:
@@ -87,10 +57,10 @@ def topMatches(prefs,person,n=5,similarity=sim_pearson):
     scores.reverse()
     return scores[0:n]
 
-def getRecommendations(prefs1,person,similarity=sim_pearson):
+def getRecommendations(prefs,person,similarity=sim_pearson):
     totals={}
     simSums={}
-    for other in prefs1:
+    for other in prefs:
         if other==person: continue
         sim=similarity(prefs,person,other)
         if sim<=0: continue
@@ -101,15 +71,25 @@ def getRecommendations(prefs1,person,similarity=sim_pearson):
                 simSums.setdefault(item,0)
                 simSums[item]+=sim
     rankings=[(total/simSums[item],item) for item,total in totals.items( )]
-    print rankings
+    sub = list()
+    rating = list()
+        
     rankings.sort( )
     rankings.reverse( )
-    return rankings
-   
+    print rankings
+    for it in rankings:
+        a,b = it
+        sub.append(a)
+        rating.append(b)
+    return [sub,rating]
 
-prefs = loading250()
-user = input('Enter User')
-#print sim_pearson(prefs,'L1','L2')
-#print topMatches(prefs,'L1')
-print getRecommendations(prefs, user)
-print prefs[user]
+prefs = loading()
+user = str(input('Enter User'))
+print 'Recommendations:'
+getRecommendations(prefs, user)
+#sub = list()
+#rating = list()
+#sub,rating = getRecommendations(prefs, user)
+#print sub
+#print rating
+#print prefs[user]

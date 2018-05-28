@@ -4,39 +4,9 @@ Created on Fri Mar 23 12:41:44 2018
 
 @author: tonio
 """
+from math import sqrt
+
 rows=[]
-def loading200():
-   
-        creader =  open('SAMPLE_RATINGS.csv','r')
-    
-        creader.next()
-        for row in creader:
-           rows.append(row)
-            
-       
-        prefs={}
-        for line in rows[:]:
-            (user,resource,rating)=line.split(",")
-            prefs.setdefault(user,{})
-            prefs[user][resource]=float(rating)
-            
-        return prefs
-def loading150():
-   
-        creader =  open('SAMPLE_RATINGS_100.csv','r')
-    
-        creader.next()
-        for row in creader:
-           rows.append(row)
-            
-       
-        prefs={}
-        for line in rows[:]:
-            (user,resource,rating)=line.split(",")
-            prefs.setdefault(user,{})
-            prefs[user][resource]=float(rating)
-            
-        return prefs
 def loading250():
    
         creader =  open('SAMPLE_RATINGS_250.csv','r')
@@ -71,8 +41,6 @@ def loading():
         
         return prefs
         
-from math import sqrt
-
 def sim_cosine(prefs,p1,p2):
     si={}
     for item in prefs[p1]:
@@ -167,7 +135,6 @@ def getOntoRecommendations(pref1s,prefs2, person,similarity1=sim_pearson, simila
                 simSums.setdefault(item,0)
                 simSums[item]+=sim
     rankings=[(total/simSums[item],item) for item,total in totals.items( )]
-    #print rankings
     rankings.sort( )
     rankings.reverse( )
     return rankings
@@ -175,6 +142,6 @@ def getOntoRecommendations(pref1s,prefs2, person,similarity1=sim_pearson, simila
 prefs1 = loading250()
 prefs2 = loading()
 print 'CF'
-print getCfRecommendations(prefs1, 'L8')
+print getCfRecommendations(prefs1, 'Jaya')
 print 'CF + Onto'
-print getOntoRecommendations(prefs1, prefs2, 'L8')
+print getOntoRecommendations(prefs1, prefs2, 'Jaya')

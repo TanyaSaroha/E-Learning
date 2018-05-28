@@ -10,7 +10,7 @@ from math import sqrt
 rows=[]
 def loading():
    
-        creader =  open('ratings_800.csv','r')
+        creader =  open('SAMPLE_RATINGS_250.csv','r')
     
         creader.next()
         for row in creader:

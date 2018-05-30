@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Recommender System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Snac theme tempalte">
+    <meta name="author" content="NDT">
+    <meta name="keywords" content="Snac theme template">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- JavaScript AJAX part -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+
+    <script src="{{ url_for('static', filename='js/form.js') }}"></script>
+
+</head>
+<body  style="background-color: rgb(245, 160, 160);">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+
+<!--  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">phone</i>
+          <input id="icon_telephone" type="tel" class="validate">
+          <label for="icon_telephone">Telephone</label>
+        </div>
+      </div>
+    </form>
+  </div><!-- padding-top: 10%;
+  -->
+    <div class="container">
+        <div class="row-mt-10">
+    		<form action="/run", method="POST" class="col s12">
+                <div class="row">
+                    <div class="input-field col s10">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input placeholder="Enter Learner's Name" id="user_name" type="text" class="validate">
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn waves-effect waves-light col s4" type="submit" name="action1" >CF Result
+                        <i class="material-icons right">send</i>
+                    </button>
+                    <button class="btn waves-effect waves-light col s4" type="submit" name="action2"    >CF+Onto Result
+                        <i class="material-icons right">send</i>
+                    </button>
+                    <button class="btn waves-effect waves-light col s4" type="submit" name="action3"    >CF+Onto+SPM Result
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class = "row">
+            <div class = "col s4">
+                <div id="result1" class = "row">
+        		</div>
+        		<div id="result2" class = "row" >
+        		</div>
+        		<div id="result3" class = "row">
+        		</div>
+        		<div id="result4" class = "row">
+        		</div>
+            </div>
+            <div class = "col s4">
+                <div id="result5" class = "row">
+                </div>
+                <div id="result6" class = "row" >
+                </div>
+                <div id="result7" class = "row">
+                </div>
+                <div id="result8" class = "row">
+                </div>
+            </div>
+            <div class = "col s4">
+                <div id="result1" class = "row">
+                </div>
+                <div id="result2" class = "row" >
+                </div>
+                <div id="result3" class = "row">
+                </div>
+                <div id="result4" class = "row">
+                </div>
+            </div>
+    	</div>
+    </div>
+
+</body>
+</html>

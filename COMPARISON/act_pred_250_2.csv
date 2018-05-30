@@ -1,0 +1,161 @@
+learner_id,resources_id ,predicted,actual
+Jaya,OS1,3.77,3.8
+Jaya,P3,3.7,3.5
+Jaya,OS4,4.064,4
+Jaya,DB6,3.72,3
+Jaya,P5,3.929,3.2
+Jaya,DB15,3.5,3.5
+Jaya,OS6,3.64,2.9
+Jaya,P7,2.603,2.5
+Jaya,OS12,2.261,1.5
+Jaya,OS7,2.405,1.8
+Jaya,OS8,2.3,2
+Jaya,OS9,2.4,2.2
+Jaya,DS8,2,2
+Jaya,DS10,0.853,1
+Jaya,DB13,1.697,1.6
+Jaya,DB8,2,1
+Lavanya,OS3,4.1,4
+Lavanya,OS5,3.518,3.1
+Lavanya,P4,3.15,2.5
+Lavanya,DS6,3.203,2.5
+Lavanya,DS4,3.207,3
+Lavanya,DB4,2.9,2.5
+Lavanya,P6,2.488,2.5
+Lavanya,DS7,1.9,1.5
+Lavanya,P9,1,1.5
+Lavanya,DS9,1,1
+Lavanya,OS4,4.367,4
+Lavanya,DB15,3.499,3.5
+Lavanya,DB6,3.377,3.5
+Lavanya,DB8,2,1.8
+Lavanya,DB7,1.168,1.2
+Lavanya,DS10,0.5,0.5
+Lavanya,DS8,2,2.1
+Lavanya,OS12,2.314,2.5
+Lavanya,P5,3.877,3.7
+Maya,OS9,2.349,2.15
+Maya,OS3,2.449,2.5
+Maya,OS1,2.521,2.5
+Maya,OS4,4.281,4.2
+Maya,P2,4,2.5
+Maya,DB3,3.869,2.75
+Maya,P1,3.261,2.6
+Maya,P10,2.836,3
+Maya,OS8,2.404,3.1
+Maya,OS2,2.751,2.5
+Maya,DB13,1.739,2
+Maya,DB10,2.05,1.4
+Maya,DS3,1.53,2
+Maya,OS10,1.832,1.5
+Maya,DB2,1.868,1.4
+Maya,DS9,1,2
+Maya,DB1,2.216,2
+Maya,DB9,2,2.25
+Maya,DS3,1.99,2
+Maya,DS10,0.989,1
+Maya,P9,1.746,2
+Priyanka,P5,3,2.5
+Priyanka,OS5,2.5,2.4
+Priyanka,DS4,2.5,2
+Priyanka,DB5,2.5,2.5
+Priyanka,OS3,1.2,1.4
+Priyanka,DS11,1,1.4
+Priya ,OS6,4.133,4.4
+Priya ,P2,4,2.5
+Priya ,DB3,3.92,2.6
+Priya ,DB11,3.88,4.2
+Priya ,P3,3.39,2.5
+Priya ,P1,3.142,2.5
+Priya ,P10,2.802,3
+Priya ,OS2,2.751,2.4
+Priya ,OS8,2.401,2.8
+Priya ,OS9,2.34,2.9
+Priya ,DB7,2.072,2
+Priya ,DB9,2,2.5
+Priya ,DB8,2,2.6
+Priya ,OS3,2.528,2.5
+Priya ,P9,1.94,2.3
+Priya ,DB1,2.21,2
+Priya ,DB13,1.73,2.4
+Priya ,DB10,2.008,2.1
+Priya ,DS3,2.028,2
+Priya ,DB2,1.867,1.5
+Priya ,DS9,1,2
+Priya ,DS10,0.97,1.2
+Shimita,DS9,1,1.5
+Shimita,DB8,2,2
+Shimita,P1,3,2.5
+Shimita,DB3,4,3.3
+Shimita,P2,4,3.6
+Shimita,OS6,4.172,4.2
+Shimita,DB15,3.5,4
+Shimita,OS7,2.55,2.9
+Shimita,P10,2.615,2.5
+Shimita,OS1,2.4,1
+Shimita,OS9,2.351,2.8
+Shimita,P7,2.311,3
+Shimita,P9,1.881,3
+Shimita,DB9,2,2.7
+Shimita,OS3,2.17,1.2
+Shimita,DS3,1.64,1.5
+Shimita,OS10,1.577,1.2
+Shimita,DB2,1.478,1.2
+Smita,OS11,4.225,4.4
+Smita,OS5,4.135,4
+Smita,P5,4.011,4
+Smita,OS7,2.597,3
+Smita,P10,2.5,2.4
+Smita,OS1,2.4,2
+Smita,OS2,2.358,1.8
+Smita,DB7,2.256,3
+Smita,OS12,2.11,2
+Smita,P9,2,2.5
+Smita,DB8,2,2.4
+Smita,DB1,1.75,1.5
+Smita,DB13,1.743,2.3
+Smita,DB10,1.725,2
+Ayesha,DB10,1.941,2
+Ayesha,P1,3,2.5
+Ayesha,DB3,4,3
+Ayesha,DS9,1,1.25
+Ayesha,P2,4,3.5
+Ayesha,P6,4.213,4.2
+Ayesha,OS4,4.284,4.5
+Ayesha,OS11,4.156,4.2
+Ayesha,DB15,3.5,3.9
+Ayesha,DB14,2.957,3.8
+Ayesha,OS7,2.61,3
+Ayesha,P10,2.68,2.2
+Ayesha,OS8,2.4,3.1
+Ayesha,OS2,2.548,2.5
+Ayesha,DB7,2.132,2.6
+Ayesha,DB9,2,2.55
+Ayesha,OS3,2.272,2
+Ayesha,DB10,1.76,1.99
+Ayesha,OS10,1.664,1.5
+Ayesha,DB2,1.617,1.8
+Ayesha,DS10,1.012,1.5
+Tanya,OS6,4.137,4
+Tanya,P4,3.709,4.2
+Tanya,OS8,2.399,3
+Tanya,OS1,2.468,2
+Tanya,OS9,2.347,2.5
+Tanya,DB7,2.222,3.5
+Tanya,P9,1.943,3.4
+Tanya,DB8,2,2.5
+Tanya,DB9,2,2.8
+Tanya,OS3,1.9,1.5
+Tanya,DB1 ,1.883,1.6
+Tanya,DB13,1.77,2
+Tanya,DS3,1.68,2.1
+Tanya,OS10,1.527,1
+Tanya,P2,4,3.5
+Tanya,DB3,3.731,3.5
+Tanya,P1,3.536,3
+Tanya,OS3,2.013,2
+Tanya,DS9,1,1.4
+Neethu,P6,3,2.8
+Neethu,DS5,3,2.8
+Neethu,DB6,2.5,2.5
+Neethu,OS6,2.3,2.5

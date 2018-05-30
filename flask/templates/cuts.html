@@ -1,0 +1,76 @@
+<form action="/run", method="POST" >
+			<div class="input-field">
+                <input style="width: 100%; padding: 12px 20px; margin: 8px 0; box-sizing: border-box;" placeholder="enter learner's name" id="user_name" type="text" class="validate">
+        	</div>
+        	<div>
+				<button class="btn waves-effect waves-light" type="submit" name="action" >CF Result
+	    			<i class="material-icons right">send</i>
+	  			</button>
+	  		</div>
+
+		</form>
+		
+<form method="POST" name="form">
+			<div class="input-field">
+                <input style="width: 100%; padding: 12px 20px; margin: 8px 0; box-sizing: border-box;" placeholder="enter learner's name" id="user_name" type="text" class="validate">
+        	</div>
+        	<div>
+				<button class="btn waves-effect waves-light" type="submit" name="action" onclick="javascript: form.action='/run';">CF Result
+	    			<i class="material-icons right">send</i>
+	  			</button>
+                <button class="btn waves-effect waves-light" type="submit" name="action2" onclick="javascript: form.action='/run';">CF+onto Result
+                    <i class="material-icons right">send</i>
+                </button>
+	  		</div>
+
+		</form>
+		
+<div style="float: center;
+        width: 50%;
+        height: 50%;
+        padding-left: 10%;
+        padding-right: 10%;
+        position:absolute;
+        z-index:-1;
+        margin-left:25%;
+        margin-top:10%;
+        margin-bottom: 10%;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        color: rgb(0, 0, 0);
+        font-size: 20px; ">
+		
+style="color:black;margin-left:30%;margin-top:5%;margin-bottom: 5%;
+
+def run_file():
+	prefs = dict()
+	prefs = loading250()
+	prefs1 = dict()
+	prefs1 = loading250()
+	prefs2 = dict()
+	prefs2 = loading()
+	user = request.form['name']
+	if user:
+		print user
+		sub = list()
+		rating = list()
+		sub2 = list()
+		rating2 = list()
+		rating,sub = getRecommendations(prefs, user)
+		rating2,sub2 = getOntoRecommendations(prefs1, prefs2, user)
+		print 'CF Recommendations:'
+		print sub
+		print 'CF+Onto Recommendations:'
+		print sub2
+		return jsonify({
+			'result1':sub[0],
+			'result2':sub[1],
+			'result3':sub[2],
+			'result4':sub[3],
+			'result5':sub2[0],
+			'result6':sub2[1],
+			'result7':sub2[2],
+			'result8':sub2[3],
+			})
+	return jsonify({'error':'mising data'})
+

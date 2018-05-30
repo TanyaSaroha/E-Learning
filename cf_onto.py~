@@ -143,4 +143,4 @@ prefs1 = loading250()
 prefs2 = loading()
 user = str(input('Enter User'))
 print 'CF + Onto'
-print getOntoRecommendations(prefs1, prefs2, user)
+getOntoRecommendations(prefs1, prefs2, user)

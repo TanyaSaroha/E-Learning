@@ -11,7 +11,7 @@ from sklearn.metrics import mean_absolute_error
 
 def loading():
     import csv
-    data1=csv.reader(open('act_pred150.csv','rb'))
+    data1=csv.reader(open('act_pred_250.csv','rb'))
     user,y_true,y_pred =[],[],[]
     error1 = []
     data1.next()
@@ -32,12 +32,12 @@ def loading():
             user_now = user[l-1]
     error1.append(mean_absolute_error(y_true,y_pred))
     avg1=np.sum(error1)/10
-    print "Average MAE using 150:" 
+    print "Average MAE using 250:" 
     print avg1
-    print "MAE for 150 ratings"
+    print "MAE for 250 ratings"
     print error1
 
-    data2=csv.reader(open('act_pred_250.csv','rb'))
+    data2=csv.reader(open('act_pred_500.csv','rb'))
     user,y_true,y_pred =[],[],[]
     error2 = []
     data2.next()
@@ -58,12 +58,12 @@ def loading():
             user_now = user[l-1]
     error2.append(mean_absolute_error(y_true,y_pred))
     avg2=np.sum(error2)/10
-    print "\nAverage MAE using 250:" 
+    print "\nAverage MAE using 500:" 
     print avg2
-    print "MAE for 250 ratings"
+    print "MAE for 500 ratings"
     print error2 
     
-    data3=csv.reader(open('act_pred_800_2.csv','rb'))
+    data3=csv.reader(open('act_pred_800.csv','rb'))
     user,y_true,y_pred =[],[],[]
     error3 = []
     data3.next()

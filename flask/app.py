@@ -1,15 +1,12 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Mar 23 12:41:44 2018
-
-@author: tonio
-"""
+from flask import Flask, render_template, request, jsonify, redirect, url_for, make_response
+import os
 from math import sqrt
+app = Flask(__name__)
 
 rows=[]
 def loading250():
    
-        creader =  open('ratings_800.csv','r')
+        creader =  open('SAMPLE_RATINGS_250.csv','r')
     
         creader.next()
         for row in creader:
@@ -26,7 +23,7 @@ def loading250():
 
 def loading():
    
-        creader =  open('learner_onto_800.csv','r')
+        creader =  open('learner_onto.csv','r')
     
         creader.next()
         for row in creader:
@@ -62,7 +59,6 @@ def sim_cosine(prefs,p1,p2):
     
     return r
 
-
 def sim_pearson(prefs,p1,p2):
     si={}
     for item in prefs[p1]:
@@ -88,11 +84,6 @@ def sim_pearson(prefs,p1,p2):
     r=num/den
     
     return r
-"""    
-def total_sim(sim1=, sim2):
-    similarity = sim1 + sim2
-    return similarity
-"""
 def topMatches(prefs,person,n=5,similarity=sim_pearson):
     scores=[(similarity(prefs,person,other),other)
                     for other in prefs if other!=person]
@@ -100,24 +91,31 @@ def topMatches(prefs,person,n=5,similarity=sim_pearson):
     scores.reverse()
     return scores[0:n]
 
-def getCfRecommendations(pref1s,person,similarity=sim_pearson):
+def getRecommendations(prefs,person,similarity=sim_pearson):
     totals={}
     simSums={}
-    for other in prefs1:
+    for other in prefs:
         if other==person: continue
-        sim=similarity(prefs1,person,other)
+        sim=similarity(prefs,person,other)
         if sim<=0: continue
-        for item in prefs1[other]:
-            if item not in prefs1[person] or prefs1[person][item]==0:
+        for item in prefs[other]:
+            if item not in prefs[person] or prefs[person][item]==0:
                 totals.setdefault(item,0)
-                totals[item]+=prefs1[other][item]*sim
+                totals[item]+=prefs[other][item]*sim
                 simSums.setdefault(item,0)
                 simSums[item]+=sim
     rankings=[(total/simSums[item],item) for item,total in totals.items( )]
-    #print rankings
+    sub = list()
+    rating = list()
+        
     rankings.sort( )
     rankings.reverse( )
-    return rankings
+    
+    for it in rankings:
+        a,b = it
+        sub.append(a)
+        rating.append(b)
+    return [sub,rating]
 
 def getOntoRecommendations(pref1s,prefs2, person,similarity1=sim_pearson, similarity2=sim_cosine):
     totals={}
@@ -138,9 +136,39 @@ def getOntoRecommendations(pref1s,prefs2, person,similarity1=sim_pearson, simila
     rankings.sort( )
     rankings.reverse( )
     return rankings
+    for it in rankings:
+        a,b = it
+        sub.append(a)
+        rating.append(b)
+    return [sub,rating]
 
-prefs1 = loading250()
-prefs2 = loading()
-user = str(input('Enter User'))
-print 'CF + Onto'
-print getOntoRecommendations(prefs1, prefs2, user)
+
+
+
+@app.route('/')
+def home():
+    return render_template('home.html')
+
+@app.route('/run', methods=['POST'])
+def run_file():
+	prefs = dict()
+	prefs = loading250()
+	user = request.form['name']
+	if user:
+		print user
+		sub = list()
+		rating = list()
+		rating,sub = getRecommendations(prefs, user)
+		print 'CF Recommendations:'
+		print sub
+		return jsonify({
+			'result1':sub[0],
+			'result2':sub[1],
+			'result3':sub[2],
+			'result4':sub[3],
+			})
+	return jsonify({'error':'mising data'})
+
+
+if __name__ == '__main__':
+    app.run(debug=True)

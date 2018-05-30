@@ -1,3 +1,4 @@
+learner_id,name,class,gender,sensing,intuitive,active,reflective,visual,verbal,sequential,global,
 L1,Jaya,BE,Female,0,1,0,1,0,1,0,1,1
 L2,Lavanya,BE,Female,0,1,0,1,0,1,1,0,1
 L3,Maya,BE,Female,0,1,0,2,0,2,2,0,2
@@ -11,15 +12,15 @@ L10,Neethu,BE,Female,0,1,1,0,2,0,1,0,3
 L11,Jaswinder,BE,Male,0,2,2,0,1,0,3,0,3
 L12,Akshdeep,BE,Male,0,3,2,0,2,0,0,3,3
 L13,Kshitij,BE,Male,0,2,2,0,1,0,2,0,3
-L14,Salil,BE,Male,0,2,2,0,0,3,1,0,2
+L14,Varad,BE,Male,0,2,2,0,0,3,1,0,2
 L15,Neeraj,BE,Male,0,2,2,0,0,3,0,2,2
-L16,Ujjawal,BE,Male,0,2,2,0,0,2,3,0,2
+L16,Ankit,BE,Male,0,2,2,0,0,2,3,0,2
 L17,Ashish,BE,Male,0,3,2,0,2,0,1,0,1
-L18,Gaur,BE,Male,0,2,1,0,0,1,1,0,1
-L19,Shera,BE,Male,0,2,1,0,0,1,0,1,1
-L20,Sankalp,BE,Male,1,0,0,1,1,0,3,0,2
+L18,Bhavesh,BE,Male,0,2,1,0,0,1,1,0,1
+L19,Prabhakar,BE,Male,0,2,1,0,0,1,0,1,1
+L20,Akshdeep,BE,Male,1,0,0,1,1,0,3,0,2
 L21,Samridhi,BE,Female,2,0,1,0,1,0,3,0,2
-L22,Tushar,BE,Male,0,2,2,0,0,2,2,0,2
+L22,Shivam,BE,Male,0,2,2,0,0,2,2,0,2
 L23,Divya,TE,Female,1,0,0,3,3,0,3,0,1
 L24,Kriti,TE,Female,1,0,0,3,0,1,0,1,1
 L25 ,Hitesh,BE,Male,0,3,3,0,3,0,3,0,2
@@ -27,10 +28,10 @@ L26,Nikhil,BE,Male,0,3,3,0,0,3,0,2,2
 L27,Deepak,BE,Male,0,3,3,0,0,1,1,0,2
 L28,Vinay,BE,Male,2,0,2,0,0,1,0,1,2
 L29,Tejas,BE,Male,0,3,2,0,3,0,2,0,3
-L30,Pawan,BE,Male,0,3,3,0,0,2,3,0,3
-L31,Ansari,BE,Male,1,0,0,2,2,0,0,3,2
-L32,Khatana,BE,Male,1,0,0,3,0,1,1,0,2
-L33,KV,BE,Male,1,0,0,3,0,1,0,1,1
+L30,Aman,BE,Male,0,3,3,0,0,2,3,0,3
+L31,Akshay,BE,Male,1,0,0,2,2,0,0,3,2
+L32,Rishav,BE,Male,1,0,0,3,0,1,1,0,2
+L33,Abhishek,BE,Male,1,0,0,3,0,1,0,1,1
 L34,Sharma,BE,Male,1,0,0,1,1,0,2,0,1
 L35,Sandeep,BE,Male,3,0,3,0,1,0,2,0,2
-L36,Satender,BE,Male,3,0,3,0,1,0,3,0,2
+L36,Shailendra,BE,Male,3,0,3,0,1,0,3,0,2

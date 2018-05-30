@@ -11,7 +11,7 @@ from sklearn.metrics import mean_absolute_error
 
 def loading():
     import csv
-    data1=csv.reader(open('act_pred150.csv','rb'))
+    data1=csv.reader(open('act_pred_250_3.csv','rb'))
     user,y_true,y_pred =[],[],[]
     error1 = []
     data1.next()
@@ -32,12 +32,12 @@ def loading():
             user_now = user[l-1]
     error1.append(mean_absolute_error(y_true,y_pred))
     avg1=np.sum(error1)/10
-    print "Average MAE using 150:" 
+    print "Average MAE using 250:" 
     print avg1
-    print "MAE for 150 ratings"
+    print "MAE for 250 ratings"
     print error1
 
-    data2=csv.reader(open('act_pred_250.csv','rb'))
+    data2=csv.reader(open('act_pred_500_3.csv','rb'))
     user,y_true,y_pred =[],[],[]
     error2 = []
     data2.next()
@@ -58,17 +58,18 @@ def loading():
             user_now = user[l-1]
     error2.append(mean_absolute_error(y_true,y_pred))
     avg2=np.sum(error2)/10
-    print "\nAverage MAE using 250:" 
+    print "Average MAE using 500:" 
     print avg2
-    print "MAE for 250 ratings"
-    print error2 
-    
-    data3=csv.reader(open('act_pred_800_2.csv','rb'))
+    print "MAE for 500 ratings"
+    print error2
+
+    data3=csv.reader(open('act_pred_800_3.csv','rb'))
     user,y_true,y_pred =[],[],[]
     error3 = []
     data3.next()
     user_now = 'Jaya'
     for row in data3: 
+       
         user.append(row[0])              
         l = len(user)
         if user[l-1] == user_now:
@@ -83,18 +84,17 @@ def loading():
             user_now = user[l-1]
     error3.append(mean_absolute_error(y_true,y_pred))
     avg3=np.sum(error3)/10
-    print "\nAverage MAE using 800:" 
+    print "Average MAE using 800:" 
     print avg3
     print "MAE for 800 ratings"
-    print error3 
-    
+    print error3
 
     arr=[1,2,3,4,5,6,7,8,9,10]
     plt.xlabel('Learner')
     plt.ylabel('Mean absolute error')
-    plt.title('This graph depicts the MAE for different number of ratings')
-    plt.plot(arr,error1,label='150 ratings')
-    plt.plot(arr,error2,label='250 ratings')
+    plt.title('This graph depicts the MAE for different number of ratings for Hybrid')
+    plt.plot(arr,error1,label='250 ratings')
+    plt.plot(arr,error2,label='500 ratings')
     plt.plot(arr,error3,label='800 ratings')
     
     plt.legend()

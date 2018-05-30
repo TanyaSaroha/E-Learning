@@ -11,7 +11,7 @@ from sklearn.metrics import mean_absolute_error
 
 def loading():
     import csv
-    data1=csv.reader(open('act_pred150.csv','rb'))
+    data1=csv.reader(open('act_pred_800.csv','rb'))
     user,y_true,y_pred =[],[],[]
     error1 = []
     data1.next()
@@ -32,12 +32,12 @@ def loading():
             user_now = user[l-1]
     error1.append(mean_absolute_error(y_true,y_pred))
     avg1=np.sum(error1)/10
-    print "Average MAE using 150:" 
+    print "Average MAE for model 1 - CF" 
     print avg1
-    print "MAE for 150 ratings"
+    print "MAE for model 1 - CF"
     print error1
-
-    data2=csv.reader(open('act_pred_250.csv','rb'))
+    
+    data2=csv.reader(open('act_pred_800_2.csv','rb'))
     user,y_true,y_pred =[],[],[]
     error2 = []
     data2.next()
@@ -58,12 +58,12 @@ def loading():
             user_now = user[l-1]
     error2.append(mean_absolute_error(y_true,y_pred))
     avg2=np.sum(error2)/10
-    print "\nAverage MAE using 250:" 
+    print "\nAverage MAE for model2 - CF + Onto" 
     print avg2
-    print "MAE for 250 ratings"
-    print error2 
+    print "MAE for model2 - CF + Onto"
+    print error2
     
-    data3=csv.reader(open('act_pred_800_2.csv','rb'))
+    data3=csv.reader(open('act_pred_800_3.csv','rb'))
     user,y_true,y_pred =[],[],[]
     error3 = []
     data3.next()
@@ -83,19 +83,19 @@ def loading():
             user_now = user[l-1]
     error3.append(mean_absolute_error(y_true,y_pred))
     avg3=np.sum(error3)/10
-    print "\nAverage MAE using 800:" 
+    print "\nAverage MAE for model3 - CF + Onto + MF" 
     print avg3
-    print "MAE for 800 ratings"
-    print error3 
+    print "MAE for model3 - CF + Onto + MF"
+    print error3
     
 
     arr=[1,2,3,4,5,6,7,8,9,10]
-    plt.xlabel('Learner')
-    plt.ylabel('Mean absolute error')
-    plt.title('This graph depicts the MAE for different number of ratings')
-    plt.plot(arr,error1,label='150 ratings')
-    plt.plot(arr,error2,label='250 ratings')
-    plt.plot(arr,error3,label='800 ratings')
+    plt.xlabel('Learners')
+    plt.ylabel('Mean Absolute error')
+    plt.title('This graph depicts the MAE for different models')
+    plt.plot(arr,error1,label='CF')
+    plt.plot(arr,error2,label='CF + Onto')
+    plt.plot(arr,error3,label='CF + Onto + MF')
     
     plt.legend()
     plt.show()
